@@ -23,21 +23,6 @@ namespace MarsProject_SpecflowAutomation.StepDefinitions
             profileObj.SelectSkill();
         }
 
-
-
-
-        [When(@"user deletes all the existing Skills records")]
-        public void WhenUserDeletesAllTheExistingSkillsRecords()
-        {
-            throw new PendingStepException();
-        }
-
-        [Then(@"Mars portal should not have any Skills records")]
-        public void ThenMarsPortalShouldNotHaveAnySkillsRecords()
-        {
-            throw new PendingStepException();
-        }
-
         [When(@"user adds a new Skill record '([^']*)' '([^']*)'")]
         public void WhenUserAddsANewSkillRecord(string programming, string beginner)
         {
