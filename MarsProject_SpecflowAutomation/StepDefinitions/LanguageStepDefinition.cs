@@ -17,10 +17,16 @@ namespace MarsProject_SpecflowAutomation.StepDefinitions
         [BeforeScenario]
         public void SetUp()
         {
-           Initialize();
-           homeObj.SignInAction();
-           loginObj.LoginActions();
-           profileObj.SelectLanguage();
+            Initialize();
+            homeObj.SignInAction();
+            loginObj.LoginActions();
+            
+        }
+
+        [Given(@"user selects language tab in the profile page")]
+        public void GivenUserSelectsLanguageTabInTheProfilePage()
+        {
+            profileObj.SelectLanguage();
         }
 
 

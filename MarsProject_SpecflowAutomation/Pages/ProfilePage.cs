@@ -27,13 +27,10 @@ namespace MarsProject_SpecflowAutomation.Pages
         public void SelectSkill()
         {
 
-            Wait.WaitToBeVisible("XPath", "//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]", 2);
+            //Wait.WaitToBeVisible("XPath", "//a[@data-tab='second']", 3);
+            Thread.Sleep(4000); 
 
-
-            //IWebElement languageTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[1]"));
-            //languageTab.Click();
-
-            IWebElement skillTab = driver.FindElement(By.XPath("//*[@id=\"account-profile-section\"]/div/section[2]/div/div/div/div[3]/form/div[1]/a[2]"));
+            IWebElement skillTab = driver.FindElement(By.XPath("//a[@data-tab='second']"));
             skillTab.Click();
 
         }
