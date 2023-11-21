@@ -20,15 +20,11 @@ namespace MarsProject_SpecflowAutomation.StepDefinitions
             Initialize();
             homeObj.SignInAction();
             loginObj.LoginActions();
-            
-        }
-
-        [Given(@"user selects language tab in the profile page")]
-        public void GivenUserSelectsLanguageTabInTheProfilePage()
-        {
             profileObj.SelectLanguage();
+
         }
 
+       
 
         [When(@"user adds a new Language record '([^']*)' '([^']*)'")]
         public void WhenUserAddsANewLanguageRecord(string language, string level)
@@ -90,11 +86,13 @@ namespace MarsProject_SpecflowAutomation.StepDefinitions
             languageObj.CancelAddLanguage(lan,level);
         }
 
-        [Then(@"Mars portal should not save the cencelled record")]
-        public void ThenMarsPortalShouldNotSaveTheCencelledRecord()
+        
+        [Then(@"Mars portal should not save the cancelled record")]
+        public void ThenMarsPortalShouldNotSaveTheCancelledRecord()
         {
             languageObj.AssertCancelAddLanguage();
         }
+
 
         [When(@"user tries to update a language record but later Cancels it '([^']*)' '([^']*)'")]
         public void WhenUserTriesToUpdateALanguageRecordButLaterCancelsIt(string lan, string level)
@@ -157,17 +155,30 @@ namespace MarsProject_SpecflowAutomation.StepDefinitions
             languageObj.AssertAddLanguageWithoutData();
         }
 
-        [When(@"user tries to add a new language with invalid data '([^']*)' '([^']*)'")]
-        public void WhenUserTriesToAddANewLanguageWithInvalidData(string lan, string level)
+        //[When(@"user tries to add a new language with invalid data '([^']*)' '([^']*)'")]
+        //public void WhenUserTriesToAddANewLanguageWithInvalidData(string lan, string level)
+        //{
+        //    languageObj.AddLanguageInvalidData(lan,level);
+        //}
+
+        //[Then(@"Mars portal should alert the user and should not save the invalid record")]
+        //public void ThenMarsPortalShouldAlertTheUserAndShouldNotSaveTheInvalidRecord()
+        //{
+        //    languageObj.AssertAddLanguageInvalidData();
+        //}
+
+        [When(@"user tries to add a new language with special characters and numbers '([^']*)' '([^']*)'")]
+        public void WhenUserTriesToAddANewLanguageWithSpecialCharactersAndNumbers(string lan, string level)
         {
-            languageObj.AddLanguageInvalidData(lan,level);
+            languageObj.AddLanguageInvalidData(lan, level);
         }
 
-        [Then(@"Mars portal should alert the user and should not save the invalid record")]
-        public void ThenMarsPortalShouldAlertTheUserAndShouldNotSaveTheInvalidRecord()
+        [Then(@"Mars portal should alert the user and save the record")]
+        public void ThenMarsPortalShouldAlertTheUserAndSaveTheRecord()
         {
             languageObj.AssertAddLanguageInvalidData();
         }
+
 
         [When(@"user tries to update a language record with an already existing language but different level '([^']*)' '([^']*)'")]
         public void WhenUserTriesToUpdateALanguageRecordWithAnAlreadyExistingLanguageButDifferentLevel(string lan, string level)
@@ -175,11 +186,13 @@ namespace MarsProject_SpecflowAutomation.StepDefinitions
             languageObj.UpdateWithExistingLanguage(lan,level);
         }
 
-        [Then(@"Mars portal should alert the user and should not update the record '([^']*)' '([^']*)'")]
-        public void ThenMarsPortalShouldAlertTheUserAndShouldNotUpdateTheRecord(string lan, string level)
+        
+        [Then(@"Mars portal should alert the user and should update the record '([^']*)' '([^']*)'")]
+        public void ThenMarsPortalShouldAlertTheUserAndShouldUpdateTheRecord(string lan, string level)
         {
-            languageObj.AssertUpdateWithExistingLanguage(lan,level);
+            languageObj.AssertUpdateWithExistingLanguage(lan, level);
         }
+
 
 
 

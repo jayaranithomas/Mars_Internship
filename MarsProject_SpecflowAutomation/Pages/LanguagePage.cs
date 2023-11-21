@@ -745,7 +745,7 @@ namespace MarsProject_SpecflowAutomation.Pages
 
             if (rowcount == 4)//New Entry added
             {
-                Assert.That(rowcount==4, Message);
+                Assert.Pass(Message);
             }
             
 
@@ -825,7 +825,7 @@ namespace MarsProject_SpecflowAutomation.Pages
 
             if ((SelectLanguage.Text.Equals(NewLan)) && (SelectLevel.Text.Equals(NewLevel)))
             {
-                Assert.That((SelectLanguage.Text.Equals(NewLan)) && (SelectLevel.Text.Equals(NewLevel)), "Language NOT  Updated Successfully");
+                Assert.Pass(Message);
              }
 
 

@@ -8,19 +8,10 @@ namespace MarsProject_SpecflowAutomation.StepDefinitions
     [Binding]
     public class SkillsStepDefinition : CommonDriver
     {
-        LoginPage LogObj = new LoginPage();
-        HomePage HomeObj = new HomePage(); 
+       
         ProfilePage ProfileObj = new ProfilePage();
         SkillsPage SkillsObj = new SkillsPage();
 
-        //[BeforeScenario]
-        //public void Setup() 
-        //{
-        //    Initialize();
-        //    HomeObj.SignInAction();
-        //    LogObj.LoginActions();
-            
-        //}
         [Given(@"user selects the Skills tab")]
         public void GivenUserSelectsTheSkillsTab()
         {

@@ -15,10 +15,11 @@ namespace MarsProject_SpecflowAutomation.Pages
             //navigate to the Mars portal login page
             driver.Navigate().GoToUrl("http://localhost:5000/Home");
 
-           Wait.WaitToBeVisible("XPath", "//*[@id=\"home\"]/div/div/div[1]/div/a", 5);
+           Wait.WaitToBeVisible("XPath", "//*[@id=\"home\"]/div/div/div[1]/div/a", 7);
 
-            IWebElement SignInButton = driver.FindElement(By.XPath("//*[@id=\"home\"]/div/div/div[1]/div/a"));
+            IWebElement SignInButton = driver.FindElement(By.XPath("//*[@id=\"home\"]/div/div/div[1]/div/a"));            
             SignInButton.Click();
+            
         }
     }
 }
